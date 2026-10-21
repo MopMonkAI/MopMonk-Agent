@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 40 960 480" role="img" aria-labelledby="architecture-title architecture-desc">
+  <title id="architecture-title">Evidence guided exploitation investigation</title>
+  <desc id="architecture-desc">Task material enters a cooperative agent investigation. Agents use tools against an authorized target; observations return to persistent evidence, which supplies bounded context for the next decision. Domain knowledge guides the investigation.</desc>
+  <defs>
+    <marker id="architecture-arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto" markerUnits="strokeWidth">
+      <path d="M0 0 8 4 0 8Z" fill="#62717d"/>
+    </marker>
+    <marker id="architecture-guide-arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto" markerUnits="strokeWidth">
+      <path d="M0 0 8 4 0 8Z" fill="#365a75"/>
+    </marker>
+    <style>
+      text { font-family: Inter, "Helvetica Neue", Arial, sans-serif; fill: #202c38; }
+      .name { font-size: 18px; font-weight: 600; }
+      .detail { font-size: 14px; fill: #566673; }
+      .path { fill: none; stroke: #62717d; stroke-width: 1.6; marker-end: url(#architecture-arrow); }
+      .guide { fill: none; stroke: #365a75; stroke-width: 1.4; stroke-dasharray: 5 4; marker-end: url(#architecture-guide-arrow); }
+    </style>
+  </defs>
+
+  <rect y="40" width="960" height="480" fill="#ffffff"/>
+
+  <path class="path" d="M232 168H316"/>
+  <path class="path" d="M624 168H708"/>
+  <path class="path" d="M812 232V332"/>
+  <path class="path" d="M712 400H628"/>
+  <path class="path" d="M512 336V236"/>
+  <path class="guide" d="M140 336V272Q140 264 148 264H384Q392 264 392 256V236"/>
+
+  <rect x="48" y="104" width="184" height="128" rx="6" fill="#ffffff" stroke="#bdc9d1" stroke-width="1.2"/>
+  <text class="name" x="64" y="143">Task input</text>
+  <text class="detail" x="64" y="180">Vulnerability + PoV</text>
+  <text class="detail" x="64" y="204">Execution objective</text>
+
+  <rect x="320" y="104" width="304" height="128" rx="6" fill="#eef3f6" stroke="#365a75" stroke-width="1.4"/>
+  <text class="name" x="336" y="143">Cooperative investigation</text>
+  <text class="detail" x="336" y="180">Coordinator frames questions</text>
+  <text class="detail" x="336" y="204">Specialists test hypotheses</text>
+
+  <rect x="712" y="104" width="200" height="128" rx="6" fill="#ffffff" stroke="#bdc9d1" stroke-width="1.2"/>
+  <text class="name" x="728" y="143">Tools and target</text>
+  <text class="detail" x="728" y="180">Inspect · debug · run</text>
+  <text class="detail" x="728" y="204">Target feedback</text>
+
+  <rect x="48" y="336" width="184" height="128" rx="6" fill="#ffffff" stroke="#bdc9d1" stroke-width="1.2"/>
+  <text class="name" x="64" y="375">Expert guidance</text>
+  <text class="detail" x="64" y="412">Reusable heuristics</text>
+  <text class="detail" x="64" y="436">Validate on target</text>
+
+  <rect x="320" y="336" width="304" height="128" rx="6" fill="#ffffff" stroke="#bdc9d1" stroke-width="1.2"/>
+  <text class="name" x="336" y="375">Bounded decision context</text>
+  <text class="detail" x="336" y="412">Task and selected evidence</text>
+  <text class="detail" x="336" y="436">Current questions and status</text>
+
+  <rect x="712" y="336" width="200" height="128" rx="6" fill="#eef3f6" stroke="#365a75" stroke-width="1.4"/>
+  <text class="name" x="728" y="375">Evidence store</text>
+  <text class="detail" x="728" y="412">Observations + results</text>
+  <text class="detail" x="728" y="436">Source records</text>
+</svg>
