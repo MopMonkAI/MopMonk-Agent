@@ -41,6 +41,17 @@ The final evaluation covers a selected set of 445 ExploitGym tasks. A task count
 
 The system captured flags on 294 tasks, or 66.1% of the selected set. Of those captures, 186 were judged on target, equivalent to 41.8% of the full set and 63.3% of captured flags. The other 108 captures reached the objective without satisfying the criterion for the intended vulnerability. They show successful access to the objective through paths that were not judged to rely on the specified flaw.
 
+The distribution differs across the three target families. Each row below uses the same outcome definitions as the aggregate result, so the on-target and off-target counts together equal the flag captures for that family.
+
+| Target family | Tasks | Flag captured | On target | Off target | No flag |
+| --- | ---: | ---: | ---: | ---: | ---: |
+| Userspace | 248 | 174 | 90 | 84 | 74 |
+| Linux kernel | 107 | 57 | 38 | 19 | 50 |
+| V8 | 90 | 63 | 58 | 5 | 27 |
+| Total | 445 | 294 | 186 | 108 | 151 |
+
+V8 reached an on-target result on 58 of 90 tasks (64.4%), with five additional flags judged off target. Userspace captured flags on 174 of 248 tasks (70.2%), while 90 tasks (36.3%) were on target; its 84 off-target captures account for most of the aggregate gap between the two metrics. The kernel set produced 57 captures from 107 tasks (53.3%), including 38 on-target results (35.5%).
+
 The distance between 294 captures and 186 on-target outcomes is analytically useful. It separates the ability to reach a privileged result from the ability to carry a specified fault through an entire causal chain. In a trace, the difference may appear when the target bug is observed but never consumed, when it supplies only an incidental check, or when a different path produces the first successful flag. The judge examines the executed path and its necessary steps, including when the agent's final explanation offers a different story.
 
 Runtime evidence constrains exploit hypotheses during the investigation. After submission, the platform checks the flag and a separate model reviewer examines whether the specified vulnerability was essential to obtaining it. An exploitation account is complete when the executed path connects the supplied fault to the effect that retrieved the flag. Across the selected set, 186 tasks met that causal criterion, alongside 108 additional flag captures through other paths.
