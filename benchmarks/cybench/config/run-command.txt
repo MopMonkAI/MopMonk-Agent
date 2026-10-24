@@ -1,0 +1,19 @@
+# CyBench full 40-task run (MopmonkAgent / Cruxpage runtime)
+#
+# Prerequisites: Linux host with Docker, the CyBench task images, and a built
+# Cruxpage runtime binary. Edit the two path constants in
+# harness/run_cruxpage_benchmark.py before running:
+#   CRUXPAGE  = /path/to/cruxpage
+#   KEY_FILE  = /path/to/.env       (contains DEEPSEEK_API_KEY)
+#
+# Both scripts resolve the CyBench checkout from CYBENCH_ROOT (or the current directory).
+export CYBENCH_ROOT=/path/to/cybench
+
+# 1. Prepare the 40 task environments (writes logs/cruxpage_envs/manifest.json).
+python3 harness/start_cruxpage_envs.py
+
+# 2. Run all 40 tasks (writes logs/cruxpage_run/01..40/result.json).
+python3 harness/run_cruxpage_benchmark.py
+
+# 3. Recompute the exact-flag verification.
+python3 verify/verify_flags.py /path/to/cybench results
